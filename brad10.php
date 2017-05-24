@@ -1,0 +1,22 @@
+<?php
+$a[0] = 12;
+$a[7] = true;
+var_dump($a);
+echo count($a);
+echo '<hr>';
+$b[] = 123;
+$b[] = 12.3;
+$b[] = true;
+var_dump($b);
+echo count($b);
+echo '<hr>';
+$brad['age'] = 26;
+$brad['weight'] = 60;
+$brad['name'] = 'brad';
+$brad['30'] = true;
+var_dump($brad);
+echo count($brad);
+echo '<hr>';
+$c = array(1,2,3,true);
+var_dump($c);
+echo count($c);
