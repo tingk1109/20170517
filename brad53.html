@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<body>
+
+<input id="click" type="button" value="click" />
+<div id="here"></div>
+
+    <script>
+
+//        $("#click").click(function(){
+//            setInterval(doit, 1000);
+//        });
+
+    $(document).ready(function () {
+    setInterval(doit,1000);
+    });
+
+        function doit() {
+            $.get("brad54.php", function(data, status){
+                //$("#here").html(status);
+                if (status == 'success'){
+                    $("#here").html(data);
+                }
+            });
+        }
+
+    </script>
+
+
+</body>
+</html>

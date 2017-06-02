@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+        // code for modern browsers
+        xmlhttp = new XMLHttpRequest();
+    } else {
+        // code for old IE browsers
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    function text1() {
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("here").innerHTML =
+                    this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "brad51.php", true);
+        xmlhttp.send();
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" onclick="text1()" value="text1" />
+    <div id="here"></div>
+</body>
+</html>
