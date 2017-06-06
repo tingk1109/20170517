@@ -11,9 +11,9 @@ $sql = 'select * from light';
 $rs = $db->query($sql);
 ?>
 
-<meta charset="utf-8" />
-<a href="objaddr.php">新增帳號</a>
-<a href="objlogout.php">登出</a>
+<input type="button" onClick="self.location.href='objaddr.php'" value="新增帳號">
+<input type="button" onClick="self.location.href='objlogout.php'" value="登出">
+
 <hr>
 <table border="1" width="100%">
     <tr>
