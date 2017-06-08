@@ -7,7 +7,7 @@
         $pdo = new pdo($dsn, $user, $passwd, $opt);
         $account = $_POST['account'];
         $passwd = $_POST['passwd'];
-        $sql = "select * from light where account=?";
+        $sql = "select * from member where account=?";
 
         ($stmt = $pdo->prepare($sql))->execute([$account]);
         if ($stmt->rowCount()>0){

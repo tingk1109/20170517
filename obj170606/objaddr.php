@@ -1,8 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <?php
-
-include 'sqllight.php';
-$pdo = new pdo($dsn, $user, $passwd, $opt);
 
 if(isset($_REQUEST['account'])){
     $account = $_REQUEST['account'];
@@ -11,18 +7,24 @@ if(isset($_REQUEST['account'])){
     $birthday = $_REQUEST['birthday'];
     $tel = $_REQUEST['tel'];
     $addr = $_REQUEST['addr'];
-    $sql = "INSERT INTO light (account,passwd,realname,birthday,tel,addr)" .
-        "VALUES (?,?,?,?,?,?)";
+    $sql = "INSERT INTO member2 (account,passwd,realname,birthday,tel,addr)" .
+        "VALUES ('{$account}','{$passwd}','{$realname}','{$birthday}','{$tel}','{$addr}')";
 
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$account,$passwd,$realname,$birthday,$tel,$addr]);
-    header("Location: objmain.php");
+    $db = @new mysqli('127.0.0.1','root','root','light');
+    $db -> query($sql);
+    header("Location: objview.php");
 }
 
 ?>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>新增帳號</title>
 
+</head>
+<body>
 <form>
     <table border="1" width="50%">
+
         <tr>
             <th>帳號</th>
             <td><input type="text" name="account"></td>
@@ -53,3 +55,9 @@ if(isset($_REQUEST['account'])){
         </tr>
     </table>
 </form>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.toast.js"></script>
+
+</body>

@@ -10,7 +10,7 @@
     $account = $_REQUEST['account'];
     $passwd = $_REQUEST['passwd'];
 
-    $sql = "SELECT * FROM light WHERE account = ?";
+    $sql = "SELECT * FROM member WHERE account = ?";
     $stmt = $pdo->prepare($sql);    // statement SQL
     $stmt->execute([$account]);
 
